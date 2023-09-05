@@ -74,7 +74,6 @@ class _Notification_SettingState extends State<Notification_Setting> {
             Card(
               elevation: 4,
               child: Container(
-                width: 500,
                 height: 90,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,7 +121,6 @@ class _Notification_SettingState extends State<Notification_Setting> {
             Card(
               elevation: 4,
               child: Container(
-                width: 500,
                 height: 90,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,7 +168,6 @@ class _Notification_SettingState extends State<Notification_Setting> {
             Card(
               elevation: 4,
               child: Container(
-                width: 500,
                 // height: 140,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -243,7 +240,6 @@ class _Notification_SettingState extends State<Notification_Setting> {
             Card(
               elevation: 4,
               child: Container(
-                width: 500,
                 // height: 140,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -355,7 +351,7 @@ class _Notification_SettingState extends State<Notification_Setting> {
             Card(
               elevation: 4,
               child: Container(
-                width: 500,
+                //width: 500,
                 // height: 140,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

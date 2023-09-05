@@ -34,7 +34,7 @@ class Top_container extends StatelessWidget {
         children: [
           Container(
             height: 65,
-            width: 700,
+            //width: 700,
             color: Colors.grey[200],
             child: Center(
               child: ListView(
@@ -62,7 +62,7 @@ class Top_container extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(10),
             color: Colors.grey[200],
-            height: 160,
+            height: 60,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [

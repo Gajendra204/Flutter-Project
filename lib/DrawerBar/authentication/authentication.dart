@@ -31,6 +31,7 @@ class _Signup_PageState extends State<Signup_Page> {
             children: [
               Container(
                 height: 200,
+                width: double.infinity,
                 child: Image.asset(
                     'images/sign-up-bg.png'), // Include your image here
               ),

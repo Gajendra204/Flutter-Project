@@ -8,12 +8,14 @@ class OfferBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Top_container(),
-        Middle_container(),
-        //Cards(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Top_container(),
+          Middle_container(),
+          //Cards(),
+        ],
+      ),
     );
   }
 }

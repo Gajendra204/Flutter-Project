@@ -32,7 +32,7 @@ class _TotalState extends State<Total> {
         Card(
           elevation: 4,
           child: Container(
-            height: 200,
+            // height: 200,
             child: Column(
               children: [
                 Container(
@@ -143,7 +143,7 @@ class _TotalState extends State<Total> {
           elevation: 4,
           child: Container(
             //height: 180,
-            width: 500,
+
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -176,65 +176,64 @@ class _TotalState extends State<Total> {
         Card(
           child: Container(
               //height: 180,
-              width: 500,
+              //width: 500,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 7, top: 10),
-                    child: Row(
-                      children: [
-                        Text(
-                          'This order is relative to a COVID-19\nemergency',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w700),
-                        ),
-                        SizedBox(
-                          width: 40,
-                        ),
-                        GestureDetector(
-                          onTap: _toggleCheck,
-                          child: Container(
-                            // width: 40,
-                            // height: 30,
-                            padding: EdgeInsets.all(5.0),
-                            decoration: BoxDecoration(
-                              color:
-                                  _isChecked ? Colors.blue : Colors.transparent,
-                              border: Border.all(color: Colors.black),
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.check,
-                                  color: Colors.white,
-                                  size: 5,
-                                ),
-                                SizedBox(width: 2.0),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 7, top: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      'This order is relative to a COVID-19\nemergency',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nEos rem fugiat nemo, error eveniet vero veritatis quam',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w400, color: Colors.grey),
-                        ),
-                      ],
+                    SizedBox(
+                      width: 40,
                     ),
-                  )
-                ],
-              )),
+                    GestureDetector(
+                      onTap: _toggleCheck,
+                      child: Container(
+                        // width: 40,
+                        // height: 30,
+                        padding: EdgeInsets.all(5.0),
+                        decoration: BoxDecoration(
+                          color: _isChecked ? Colors.blue : Colors.transparent,
+                          border: Border.all(color: Colors.black),
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          // mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.check,
+                              color: Colors.white,
+                              size: 5,
+                            ),
+                            SizedBox(width: 2.0),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nEos rem fugiat nemo, error eveniet vero veritatis quam',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400, color: Colors.grey),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          )),
         ),
         SizedBox(
           height: 16,

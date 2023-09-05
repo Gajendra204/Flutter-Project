@@ -41,7 +41,7 @@ class _Cart_TopState extends State<Cart_Top> {
           padding: EdgeInsets.all(12),
           margin: EdgeInsets.all(8),
           // color: Colors.purple,
-          width: 500,
+          // width: 500,
           height: 250,
           child: Column(
             children: [
@@ -50,7 +50,7 @@ class _Cart_TopState extends State<Cart_Top> {
                   Container(
                     width: 25,
                     child: Image.asset(
-                      'assets/cart.jpeg',
+                      'images/veg.jpeg',
                     ),
                   ),
                   SizedBox(
@@ -146,7 +146,7 @@ class _Cart_TopState extends State<Cart_Top> {
                   Container(
                     width: 25,
                     child: Image.asset(
-                      'assets/cart.jpeg',
+                      'images/veg.jpeg',
                     ),
                   ),
                   SizedBox(
