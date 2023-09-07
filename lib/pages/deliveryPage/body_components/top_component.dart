@@ -76,7 +76,8 @@ class Brands extends StatelessWidget {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
             crossAxisSpacing: 10,
-            mainAxisSpacing: 15,
+            mainAxisSpacing: 25,
+            childAspectRatio: 1.0,
           ),
         ),
       ],
@@ -95,7 +96,8 @@ class DishesWidget extends StatelessWidget {
         Navigator.pushNamed(context, 'pizzasearch');
       },
       child: Container(
-        width: 200, // Increase width to provide more space
+        height: 90,
+        // padding: EdgeInsets.only(bottom: 5), // Add padding to the bottom
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -104,35 +106,36 @@ class DishesWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
               child: Image.asset(
                 dishesData.image,
-                height: 62, // Decrease height for the image
-                width: 62, // Decrease width for the image
+                height: 62, // Adjust height to fit the image
+                width: 62,
+                fit: BoxFit.cover, // Adjust width to fit the image
               ),
             ),
-            SizedBox(height: 2),
+            SizedBox(height: 8), // Increase spacing
             Text(
               dishesData.title,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(height: 2), // Decrease spacing
+            SizedBox(height: 4), // Increase spacing
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
                   Icons.access_time,
-                  size: 12, // Decrease icon size
+                  size: 12,
                   color: Colors.green,
                 ),
                 SizedBox(width: 2),
                 Text(
                   dishesData.duration,
                   style: TextStyle(
-                    fontSize: 11, // Decrease font size
+                    fontSize: 11,
                     color: Colors.grey,
                   ),
                 ),

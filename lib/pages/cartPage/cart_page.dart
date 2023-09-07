@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 
+import '../../DrawerBar/drawer_bar.dart';
 import 'cart components/card_top.dart';
 import 'cart components/item_total.dart';
 
 class Cart extends StatefulWidget {
-  const Cart({super.key});
+  Cart({super.key});
 
   @override
   _CartState createState() => _CartState();
 }
 
 class _CartState extends State<Cart> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        key: _scaffoldKey,
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
@@ -59,19 +62,14 @@ class _CartState extends State<Cart> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, 'drawer');
+            IconButton(
+                onPressed: () {
+                  _scaffoldKey.currentState?.openEndDrawer();
                 },
-                child: Icon(
+                icon: Icon(
                   Icons.menu,
                   color: Colors.black,
-                  size: 28,
-                ),
-              ),
-            )
+                ))
           ],
         ),
         body: SingleChildScrollView(
@@ -126,6 +124,7 @@ class _CartState extends State<Cart> {
             ],
           ),
         ),
+        endDrawer: DrawerBar(),
       ),
     );
   }

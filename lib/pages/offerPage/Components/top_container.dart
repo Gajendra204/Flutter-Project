@@ -33,99 +33,253 @@ class Top_container extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 65,
+            height: 59,
             //width: 700,
             color: Colors.grey[200],
-            child: Center(
-              child: ListView(
-                children: [
-                  ListTile(
-                    leading: const Icon(
-                      Icons.percent_outlined,
-                      size: 37,
-                    ),
-                    title: const Text(
-                      "Minimum 50% OFF",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    subtitle: const Text("and other amazing offers too"),
-                    trailing: TextButton(
-                      onPressed: () {},
-                      child: const Text("See all"),
-                    ),
-                  )
-                ],
+            child: ListTile(
+              leading: Image.asset(
+                'images/discount.png',
+                scale: 9,
+              ),
+              title: const Text(
+                "Minimum 50% OFF",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              subtitle: const Text("and other amazing offers too"),
+              trailing: TextButton(
+                onPressed: () {},
+                child: const Text("See all"),
               ),
             ),
           ),
           Container(
-            padding: EdgeInsets.all(10),
             color: Colors.grey[200],
-            height: 60,
+            height: 200,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10),
-                  height: 150,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset("images/O1.jpeg")),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      //padding: EdgeInsets.all(10),
+                      height: 150,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset("images/O1.jpeg")),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Om corners",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "60% OFF up to \$120",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Colors.grey),
+                        )
+                      ],
+                    )
+                  ],
                 ),
-                Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10),
-                  height: 150,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset("images/O2.jpeg")),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      //padding: EdgeInsets.all(10),
+                      height: 150,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset("images/O2.jpeg")),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Dhir Refresh",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "60% OFF up to \$120",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Colors.grey),
+                        )
+                      ],
+                    )
+                  ],
                 ),
-                Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10),
-                  height: 150,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset("images/O3.jpeg")),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      //padding: EdgeInsets.all(10),
+                      height: 150,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset("images/O3.jpeg")),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Spicy Food",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "60% OFF up to \$120",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Colors.grey),
+                        )
+                      ],
+                    )
+                  ],
                 ),
-                Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10),
-                  height: 150,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset("images/O4.jpeg")),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      //padding: EdgeInsets.all(10),
+                      height: 150,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset("images/O4.jpeg")),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Pizza Hut",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "60% OFF up to \$120",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Colors.grey),
+                        )
+                      ],
+                    )
+                  ],
                 ),
-                Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10),
-                  height: 100,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset("images/O1.jpeg")),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      //padding: EdgeInsets.all(10),
+                      height: 150,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset("images/O1.jpeg")),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Prem Bakers",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "50% OFF up to \$110",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Colors.grey),
+                        )
+                      ],
+                    )
+                  ],
                 ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  height: 100,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset("images/O3.jpeg")),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      //padding: EdgeInsets.all(10),
+                      height: 150,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset("images/O3.jpeg")),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Family Resto...",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "80% OFF up to \$200",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Colors.grey),
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ],
             ),
           ),
-          SizedBox(
-            height: 25,
-          ),
           Container(
-            padding: EdgeInsets.all(15),
+            margin: EdgeInsets.only(top: 20),
+            padding: EdgeInsets.only(left: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -149,7 +303,6 @@ class Top_container extends StatelessWidget {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
               crossAxisSpacing: 10,
-              mainAxisSpacing: 15,
             ),
           ),
         ],
@@ -167,16 +320,16 @@ class DishesWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        width: 200, // Increase width to provide more space
         color: Colors.white,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              dishesData.image,
-              height: 62, // Decrease height for the image
-              width: 62, // Decrease width for the image
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Image.asset(
+                dishesData.image,
+                height: 65, // Decrease height for the image
+                width: 62, // Decrease width for the image
+              ),
             ),
             SizedBox(height: 8),
             Text(
@@ -186,7 +339,7 @@ class DishesWidget extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(height: 2), // Decrease spacing
+            // Decrease spacing
           ],
         ),
       ),

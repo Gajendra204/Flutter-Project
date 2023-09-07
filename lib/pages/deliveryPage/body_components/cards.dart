@@ -62,11 +62,35 @@ class Cards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: cardDataList.length,
-        itemBuilder: (context, index) {
-          return CardWidget(cardData: cardDataList[index]);
-        },
+      body: Container(
+        color: Colors.grey.shade100,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    '783 restaurants around you', // Replace with your desired text
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: cardDataList.length,
+                itemBuilder: (context, index) {
+                  return CardWidget(cardData: cardDataList[index]);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -81,173 +105,138 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Container(
-        color: Colors.white,
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
+    double cardWidth = width - 32; // Calculate card width dynamically
+
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+        //color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {},
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                elevation: 15,
                 child: Column(
-                  children: [
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        cardData.titleImage,
+                        width: cardWidth,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    SizedBox(height: 10),
                     Container(
-                        margin: EdgeInsets.all(4),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        width: 400,
-                        // height: 400,
-                        // color: Colors.white,
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: Card(
-                            // margin: EdgeInsets.all(4),
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                color: Colors.white,
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                cardData.titleText,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
                               ),
-                              borderRadius:
-                                  BorderRadius.circular(10.0), //<-- SEE HERE
-                            ),
-                            color: Colors.white,
-                            elevation: 15,
-                            //margin: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.asset(
-                                      cardData.titleImage,
-                                      width: 400,
-                                      fit: BoxFit.cover,
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: Colors.green.shade900,
+                                ),
+                                height: 25,
+                                width: 50,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      cardData.rating.toString(),
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.all(10),
-                                    margin:
-                                        EdgeInsets.only(left: 10, right: 10),
-                                    child: Column(
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(cardData.titleText,
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20)),
-
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                  color: Colors.green.shade900),
-                                              height: 25,
-                                              width: 50,
-                                              //color: Colors.green.shade700,
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  // Add spacing between icon and text
-                                                  Text(
-                                                    cardData.rating.toString(),
-                                                    style: TextStyle(
-                                                      color: Colors
-                                                          .white, // Set the color of the text
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                  Icon(
-                                                    Icons.star,
-                                                    color: Colors.white,
-                                                    size:
-                                                        18, // Set the color of the icon
-                                                  ),
-                                                ],
-                                              ),
-                                            ) //rating container
-                                          ],
-                                        ),
-                                        SizedBox(height: 8),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(cardData.subtitle),
-                                            // Spacer(),
-                                            Text(
-                                              cardData.price,
-                                              style: TextStyle(fontSize: 14),
-                                            ),
-                                          ],
-                                        ),
-                                        // ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-
-                                        //Subtitle and price
-                                      ],
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                      size: 18,
                                     ),
-                                  ),
-                                  Container(
-                                    color: Colors.grey.shade200,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.all(8),
-                                          height: 70,
-                                          color: Colors.grey.shade200,
-                                          child: Image.asset(
-                                            cardData.maxImage,
-                                            height: 35,
-                                            width: 95,
-                                          ),
-                                        ),
-                                        Column(children: [
-                                          Row(
-                                              // crossAxisAlignment:
-                                              //     CrossAxisAlignment.start,
-                                              // mainAxisAlignment:
-                                              //     MainAxisAlignment
-                                              //         .center,
-                                              children: [
-                                                Text(
-                                                  cardData.comment,
-                                                  style: TextStyle(
-                                                    fontSize: 13,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 15,
-                                                ),
-                                                Image.asset(
-                                                  cardData.iconImage,
-                                                  height: 45,
-                                                  width: 35,
-                                                ),
-                                              ])
-                                        ]),
-                                      ],
-                                    ),
-                                  )
-                                ]),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                        )),
+                          SizedBox(height: 8),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(cardData.subtitle),
+                              Text(
+                                cardData.price,
+                                style: TextStyle(fontSize: 14),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 5),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      color: Colors.grey.shade200,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(8),
+                            height: 70,
+                            color: Colors.grey.shade200,
+                            child: Image.asset(
+                              cardData.maxImage,
+                              height: 35,
+                              width: 95,
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    cardData.comment,
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                  SizedBox(width: 15),
+                                  Image.asset(
+                                    cardData.iconImage,
+                                    height: 45,
+                                    width: 35,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-              )
-            ]));
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

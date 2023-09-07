@@ -2,8 +2,11 @@ import 'package:eatsome_food/pages/offerPage/offerpagebody.dart';
 //import 'package:eatsome_food/pages/offerpageBody.dart';
 import 'package:flutter/material.dart';
 
+import '../../DrawerBar/drawer_bar.dart';
+
 class OfferPage extends StatelessWidget {
-  const OfferPage({super.key});
+  OfferPage({super.key});
+  ScrollController scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,20 +41,21 @@ class OfferPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.only(right: 15),
+                        padding: EdgeInsets.only(right: 4),
                         child: Icon(
                           Icons.notifications_none,
                           size: 30,
                           color: Colors.black,
                         ),
                       ),
-                      Container(
-                        child: Icon(
-                          Icons.menu,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                      )
+                      IconButton(
+                          onPressed: () {
+                            Scaffold.of(context).openEndDrawer();
+                          },
+                          icon: Icon(
+                            Icons.menu,
+                            color: Colors.black,
+                          ))
                     ],
                   ),
                 ),
@@ -63,8 +67,17 @@ class OfferPage extends StatelessWidget {
             ),
           ];
         },
-        body: OfferBody(),
+        body: CustomScrollView(
+          shrinkWrap: true,
+          controller: scrollController,
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: OfferBody(),
+            )
+          ],
+        ),
       ),
+      endDrawer: DrawerBar(),
     );
   }
 }

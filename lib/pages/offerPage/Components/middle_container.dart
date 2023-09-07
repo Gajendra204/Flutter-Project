@@ -34,12 +34,12 @@ class Middle_container extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  "Eat what makes you happy",
+                  "Most loved offers on Eatsome",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

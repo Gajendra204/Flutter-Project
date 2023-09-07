@@ -41,38 +41,36 @@ class Dishes extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.all(16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "Eat what makes you happy",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+    return Column(children: [
+      Container(
+        padding: EdgeInsets.all(16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              "Eat what makes you happy",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-        GridView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return DishesWidget(dishesData: dishesDataList[index]);
-          },
-          itemCount: dishesDataList.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-          ),
+      ),
+      GridView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index) {
+          return DishesWidget(dishesData: dishesDataList[index]);
+        },
+        itemCount: dishesDataList.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
         ),
-      ],
-    );
+      )
+    ]);
   }
 }
 
@@ -85,7 +83,7 @@ class DishesWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        width: 90,
+        //width: 90,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -93,8 +91,8 @@ class DishesWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
               child: Image.asset(
                 dishesData.image,
-                height: 62,
-                width: 62,
+                height: 55,
+                width: 55,
               ),
             ),
             SizedBox(height: 8),

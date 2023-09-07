@@ -1,7 +1,10 @@
-import 'package:eatsome_food/Other%20pages/Pizza%20search%20page/Cards_2.dart';
 import 'package:flutter/material.dart';
 
+import '../../pages/deliveryPage/body_components/cards.dart';
+
 class ZomatoApp extends StatelessWidget {
+  ScrollController scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +63,15 @@ class ZomatoApp extends StatelessWidget {
             ),
           ];
         },
-        body: Cards_search(),
+        body: CustomScrollView(
+          shrinkWrap: true,
+          controller: scrollController,
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: Cards(),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -6,8 +6,8 @@ class MyFlexibleAppBar extends StatelessWidget {
     return Container(
       height: 60.0,
       decoration: BoxDecoration(
-          // color: Colors.redAccent,
-          ),
+        color: Colors.redAccent,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[

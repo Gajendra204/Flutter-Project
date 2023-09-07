@@ -6,6 +6,7 @@ import 'package:eatsome_food/Other%20pages/Pizza%20search%20page/pizzaSearch.dar
 import 'package:flutter/material.dart';
 
 import 'DrawerBar/AddCard.dart';
+import 'DrawerBar/drawer_bar.dart';
 import 'DrawerBar/edit_profile.dart';
 import 'DrawerBar/notificationSetting.dart';
 import 'DrawerBar/notifications.dart';
@@ -28,7 +29,7 @@ void main() {
     routes: {
       'splash': (context) => SplashScreen(),
       'homeScreen': (context) => HomeScreen(),
-      //'drawerbar': (context) => const DrawerBar(),
+      'drawerbar': (context) => DrawerBar(),
       'pizzasearch': (context) => ZomatoApp(),
       'couponpage': (context) => Coupons_page(),
       'notification': (context) => Notification_Page(),

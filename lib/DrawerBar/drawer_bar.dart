@@ -133,9 +133,8 @@ class DrawerBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double halfScreenWidth = MediaQuery.of(context).size.width / 2;
+    // double halfScreenWidth = MediaQuery.of(context).size.width / 2;
     return Drawer(
-      width: halfScreenWidth,
       child: Column(
         children: [
           Container(

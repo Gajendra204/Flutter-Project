@@ -14,9 +14,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
   final screens = [
-    const DeliveryPage(),
-    const OfferPage(),
-    const Cart(),
+    DeliveryPage(),
+    OfferPage(),
+    Cart(),
     HistoryPage(),
   ];
   @override
